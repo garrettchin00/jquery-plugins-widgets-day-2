@@ -174,7 +174,7 @@ $(function(){
 	*/
 	$("#switchClass button").on("click", () => {
 		$("#switchClass p").switchClass("style1", "style2", 4000);
-		$("#switchClass p").switchClass("style2", "style1", 4000)
+		$("#switchClass p").switchClass("style2", "style1", 4000);
 	});
 
 	// ---------------------------------------------------------
@@ -186,7 +186,7 @@ $(function(){
 		--- FOR OUR VERSION ---
 			- Default tabs
 	*/
-	// TO DO: add the tabs to the page with the settings/features listed above
+	$(".tabs").tabs();
 
 	// ---------------------------------------------------------
 	// Datepicker Widget
@@ -203,7 +203,15 @@ $(function(){
 			- on the change event:
 				- Display the value the user selected in the paragraph in this section after the text "<strong>You Have Selected:</strong> "
 	*/
-	// TO DO: add the datepicker to the page with the settings/features listed above;
+	$("#datepicker").datepicker({
+		dateFormat: "DD, MM d, yy",
+		onSelect: function(){
+			$(this).change();
+		}
+	})
+	.on("change", function(){
+		$("#dateDisplay").html("<strong>You Have Selected:</strong> " + $(this).val());
+	});
 
 	// ---------------------------------------------------------
 	// AutoComplete
