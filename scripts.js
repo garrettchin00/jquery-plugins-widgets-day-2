@@ -98,7 +98,11 @@ $(function(){
 	*/
 	$("#accordion").accordion({
 		collapsible: true,
-		
+		active: false,
+		icons: {
+			header: "ui-icon-caret-1-e",
+			activeHeader: "ui-icon-caret-1-s"
+		}
 	});
 
 	// ---------------------------------------------------------
