@@ -1,0 +1,706 @@
+/*
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-weight: 400;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ----- Global/Mobile Styles ----- */
+:root{
+    /* Theme from  */
+    --wht: #fffefe;
+    --lt-gray: #d9d9de;
+    --blk: #1b1b1d;
+    --blue: #164593;
+    --hot-pink: #f63077;
+    --lt-pink: #fcb6c1;
+    
+    --med-gray: #555;
+    --dk-gray: #222;
+
+    --svg: var(--hot-pink);
+
+    --rnbw1: #ef131f;
+    --rnbw2: #5136d0;
+    --rnbw3: #36d0b8;
+
+    /* Weights: 100-900 */
+    --fonts: Raleway, "Trebuchet MS", sans-serif;
+
+    /* Shadows */
+    --box-shadow-sm: -3px 3px 6px var(--med-gray);
+    --box-shadow-lg: -6px 6px 12px var(--med-gray);
+}
+
+/* ----- Skip Link Styles ----- */
+/* from: https://webaim.org/techniques/css/invisiblecontent/ */
+#skip{
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+#skip:focus{
+    display: block;
+	position: static;
+	width: auto;
+	height: auto;
+	font-family: var(--fonts);
+	font-size: 1.25rem;
+	font-weight: bold;
+    background-color: var(--wht);
+	color: var(--dk-gray);
+	outline: 4px solid var(--hot-pink);
+}
+
+/* ----- Body Styles ----- */
+body{
+    background-color: var(--lt-gray);
+    font-family: var(--fonts);
+    line-height: 1.35;
+    color: var(--dk-gray);
+    font-size: 1rem;
+}
+
+/* ----- HeaderMain/Footer Shared Styles ----- */
+header, main, footer{
+    display: block;
+    width: calc(100% - 2rem);
+    max-width: calc(900px - 2rem);
+    margin: 0 auto;
+    background-color: var(--wht);
+}
+
+header, footer{
+    padding: 2rem 1rem;
+}
+
+/* ----- Hidden content for screen reader users - code from: https://webaim.org/techniques/css/invisiblecontent/ ----- */
+.sr-only {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+/* ----- Link Styles ----- */
+a{
+    display: block;
+    padding: 1rem;
+	color: var(--dk-gray);
+    text-decoration: 2px solid underline var(--blue);
+    transition: all 300ms;
+}
+
+p > a{
+    display: inline;
+    padding: 0;
+}
+
+a:focus{
+	outline: 4px solid var(--hot-pink);
+	outline-offset: 2px;
+}
+
+/* ----- Navigation Styles ----- */
+nav ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+    gap: 16px;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+nav li{
+	list-style-type: none;
+	display: inline-block;
+    padding: 0;
+}
+
+nav a{
+	text-decoration: none;
+	padding: 1rem;
+	width: fit-content;
+    text-align: center;
+    font-weight: 600;
+	background-color: var(--blue);
+	color: var(--wht);
+	box-shadow: var(--box-shadow-lg);
+}
+
+/* ----- Heading Styles ----- */
+h1, h2, h3, h4{
+    font-weight: 800;
+    text-align: center;
+}
+
+h1{
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+h2{
+	font-size: 1.75rem;
+	margin: 0.5rem 0;
+}
+
+h3{
+	font-size: 1.5rem;
+	margin: 1rem 0;
+}
+
+h4{
+	font-size: 1.35rem;
+	margin: 1rem 0;
+}
+
+/* ----- Text Styles ----- */
+p{
+    padding: 1rem 0; 
+    font-size: 1rem;
+    max-width: 65ch;
+    margin: 0 auto;
+}
+
+code{
+	display: block;
+	font-family: monospace;
+	padding: 1rem;
+	background-color: var(--lt-gray);
+	width: fit-content;
+	max-width: calc(100% - 2rem);
+	overflow: scroll;
+	margin: 0 auto;
+}
+
+ul{
+	padding-left: 2rem;
+	list-style-type: disc;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+ol{
+	padding-left: 2rem;
+	list-style-type: decimal;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+dl{
+	padding-left: 2rem;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+dt{
+	font-weight: 600;
+}
+
+li{
+	padding: 0.25rem 0;
+}
+
+strong{
+	font-weight: 600;
+}
+
+/* ----- Image/SVG Styles ----- */
+img, svg{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ----- Classes for Styling ----- */
+.no_shadow{
+	box-shadow: none;
+}
+
+.errorInput{
+    border: 1px solid var(--hot-pink);
+}
+
+.hidden{
+	display: none;
+}
+
+.code{
+	font-family: monospace;
+}
+
+/* ----- Main Styles ----- */
+main{
+    padding: 1rem;
+}
+
+/* ----- Container Styles ----- */
+main > section{
+    margin: 2rem auto;
+}
+
+section section{
+    padding: 8px;
+}
+
+/* ----- Form Styles ----- */
+form{
+	width: 90%;
+	max-width: 300px;
+	margin: 0 auto 2rem auto;
+	font-size: 1.1rem;
+    accent-color: var(--hot-pink);
+}
+
+input, textarea{
+    display: block;
+    width: calc(100% - 1.5em);
+    padding: 0.5em;
+    border: 1px solid var(--lt-gray);
+    border-radius: 0;
+    outline: none;
+    font-size: 1.1rem;
+    font-family: var(--fonts);
+}
+
+label{
+    margin: 1em 0 0 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.required{
+	color: var(--hot-pink);
+}
+
+input, select{
+	height: 2em;
+	margin: 0 auto 1rem auto;
+	font-size: 1rem;
+	font-family: var(--fonts);
+}
+
+input{
+    display: block;
+    margin: 0.25em auto;
+    font-family: var(--fonts);
+}
+
+input:focus, input:focus-within, input:focus-visible, textarea:focus, select:focus{
+	outline: 2px solid var(--hot-pink);
+}
+
+button, input[type="submit"]{
+    display: block;
+    margin: 1rem auto;
+    background-color: var(--blue);
+    border: none;
+    outline: none;
+    color: var(--wht);
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0.75em;
+    font-family: var(--fonts);
+    font-size: 1em;
+    box-shadow: var(--box-shadow-lg);
+    height: auto;
+    transition: all 300ms;
+}
+
+button:focus{
+	outline: 4px solid var(--hot-pink);
+	outline-offset: 2px;
+}
+
+/* ----- Color Picker Section ----- */
+/* Styles for the Spectrum Color Picker */
+/* This thing took a dump in 2024, had to play with the CSS to get it to appear properly again */
+.sp-container, .sp-container input{
+    border: none;
+    font-family: var(--fonts);
+    
+}
+
+.sp-input{
+    font-size: 1rem !important; /* they used this, so I had to also */
+    border: 1px solid var(--med-gray);
+    border-radius: 0;
+}
+
+.sp-sat, .sp-val, .sp-color, .sp-top-inner, .sp-fill{
+	height: 100%;
+}
+
+#colorGridDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	max-width: 700px;
+	margin: 0 auto;
+    max-width: 500px;
+}
+
+#colorGridDiv label{
+	font-weight: 600;
+    margin-bottom: 0.5rem;
+    align-self: start;
+}
+
+#pluginsIntro svg{
+	stroke: var(--svg);
+	fill: var(--svg);
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* ----- Accordion Section Styles ----- */
+#accordion{
+	margin: 1rem auto;
+    max-width: 650px;
+}
+
+.ui-accordion .ui-accordion-content{
+    padding: 1em;
+}
+
+.ui-accordion .ui-accordion-header.ui-state-active:focus-visible{
+    outline: 4px solid var(--hot-pink);
+    background-color: var(--lt-pink);
+    color: var(--dk-gray);
+}
+
+.ui-accordion .ui-accordion-header:focus-visible{
+    outline: 4px solid var(--hot-pink);
+    background-color: var(--blue);
+    color: var(--wht);
+}
+
+.ui-accordion .ui-icon{
+    margin-right: 8px;
+}
+
+#accordion img{
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+/* Animation Section Styles ----- */
+#animations svg{
+	display: block;
+	width: 90%;
+	max-width: 350px;
+	margin: 0 auto;
+}
+
+/* Rainbow SVG Styles */
+#path1{
+	fill: var(--rnbw1);
+}
+
+#path2{
+	fill: var(--rnbw2);
+}
+
+#path3{
+	fill: var(--rnbw3);
+}
+
+/* Div Under the Rainbow */
+#switchClass{
+    margin-top: 2rem;
+}
+
+/*  Classes we Animate Between */
+.style1{
+	font-size: 1.1rem;
+	color: var(--blue);
+	line-height: 1.5;
+	padding: 1rem;
+    font-weight: 200;
+}
+
+.style2{
+	font-size: 1.3rem;
+	letter-spacing: 1px;
+	line-height: 1.3;
+	color: var(--hot-pink);
+	font-weight: 700;
+	padding: 2rem;
+}
+
+/* ----- Tabs In Last Main Section ----- */
+/* This is creating a weird space in the tabs, so I am removing it */
+.ui-tabs{
+    padding: 0;
+}
+
+.ui-tabs.ui-widget.ui-widget-content{
+    border-color: var(--lt-gray);
+}
+
+.ui-tabs .ui-widget-header{
+    border: none;
+    border-bottom: 1px solid var(--lt-gray);
+}
+
+.ui-tabs .ui-tabs-panel{
+    padding: 1rem;
+}
+
+.ui-helper-clearfix:before, .ui-helper-clearfix:after{
+    display: none;
+}
+
+.tabs ul{
+    padding: 0;
+    list-style-type: none;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.tabs li{
+    margin: 0;
+}
+
+.tabs li:focus-visible, .tabs a:focus-visible{
+    outline: 4px solid var(--hot-pink);
+}
+
+.tabs ul a{
+    font-weight: 600;
+    padding: 0.5em 1em;
+}
+
+/* ----- Datepicker Section Styles ----- */
+#datepicker{
+	display: block;
+	width: 100%;
+	margin: 1rem auto;
+    /* allow scroll because there is overflow on smallest screens */
+    overflow: scroll;
+}
+
+#datepicker > div{
+    width: fit-content;
+}
+
+#dateDisplay{
+	width: fit-content;
+	margin: 1rem auto;
+}
+
+.ui-datepicker{
+    width: calc(100% - 0.4em);
+}
+
+.ui-datepicker .ui-datepicker-header{
+    background-color: var(--blue);
+    color: var(--wht);
+    font-size: 1.1rem;
+}
+
+.ui-datepicker .ui-datepicker-month, .ui-datepicker .ui-datepicker-year{
+    font-weight: 600;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next{
+    padding: 0;
+}
+
+/* ----- For the Autocomplete Section ----- */
+#autocomp div{
+	margin: 2rem 0;
+}
+
+#autocomp input, #autocomp label{
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+#autocomp label{
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+#autocomp strong{
+	display: block;
+}
+
+#auto-output{
+    width: fit-content;
+}
+
+/* Dialog Section Styles */
+.ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-draggable.ui-resizable, .ui-dialog .ui-dialog-content{
+	width: calc(100% - 2em) !important;
+    max-width: 350px;
+}
+
+.ui-dialog .ui-dialog-titlebar{
+    padding: 1em;
+}
+
+.ui-dialog .ui-widget-header {
+	border: none;
+}
+
+.ui-dialog .ui-dialog-title {
+	font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	padding: 16px;
+}
+
+/* For Tooltips section */
+#tooltip div{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 1rem;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+#tooltip button{
+	border-radius: 50%;	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+button svg{
+	width: 40px;
+	height: 40px;
+}
+
+#tooltip button:hover{
+	background-color: var(--hot-pink);	
+}
+
+.ui-tooltip{
+	padding: 16px;
+}
+
+.ui-tooltip-content{
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+/* Footer styles */
+footer{
+	text-align: center;
+}
+
+footer p{
+	width: fit-content;
+	margin: 0 auto;
+}
+
+footer span{
+	color: var(--dk-gray);
+}
+
+/* Hover Feature Query: add hover styles on devices that support hover styles */
+@media (hover: hover){
+	nav a:hover, button:hover, input[type="submit"]:hover{
+		background-color: var(--hot-pink);
+        color: var(--wht);
+        box-shadow: var(--box-shadow-sm);
+	}
+	
+	a:hover{
+        text-decoration-color: var(--hot-pink);
+        text-decoration-thickness: 3px;
+    }
+}
+
+/* ----- Media Queries ----- */
+@media screen and (min-width: 375px){
+    #datepicker{
+        overflow: auto;
+        max-width: 320px;
+    }
+
+    #datepicker > div{
+        width: 100%;
+        max-width: 310px;
+    }
+}
+
+@media screen and (min-width: 550px){
+    #colorGridDiv{
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: 1fr 5fr;
+        justify-items: start;
+    }
+
+    #colorGridDiv label{
+        /* margin: 0; */
+    }
+
+    #colorGridDiv svg{
+        grid-column: 2/3;
+        grid-row: 1/3;
+    }
+
+    .tabs ul{
+        gap: 0;
+    }
+}
