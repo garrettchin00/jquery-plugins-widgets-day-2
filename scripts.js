@@ -273,8 +273,21 @@ $(function(){
 				- duration should be 2000
 			- When a user clicks on the button in this section, it should open the dialog
 	*/
-	// TO DO: add the dialog to the page with the settings/features listed above
+	$("#dialog").dialog({
+		autoOpen: false,
+		show: {
+			effect: "blind",
+			duration: 2000
+		},
+		hide: {
+			effect: "fade",
+			duration: 2000
+		}
+	});
 
+	$("#openDialog").on("click", function(){
+		$("#dialog").dialog("open");
+	});
 	// ---------------------------------------------------------
 	// Tooltip Widget
 	// ---------------------------------------------------------
@@ -288,5 +301,5 @@ $(function(){
 		--- FOR OUR VERSION: ---
 			- Default tooltip
 	*/
-	// TO DO: add tooltips to the page with the settings/features listed above
+	$(document).tooltip();
 });
