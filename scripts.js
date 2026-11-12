@@ -247,7 +247,13 @@ $(function(){
 		"Cynthia Storm"
 	];
 	
-	// TO DO: add the autocomplete widget to the page with the settings/features listed above
+	$("#mentor").autocomplete({
+		source: faculty,
+		select: (event, ui) => {
+			$("#mentor").val(ui.item.value);
+			$("#auto-output").html("<strong>You have chosen:</strong> " + $("#mentor").val());
+		}
+	});
 
 	// ---------------------------------------------------------
 	// Dialog Widget (Modal/Popup)
