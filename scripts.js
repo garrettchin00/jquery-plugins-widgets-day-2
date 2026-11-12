@@ -56,7 +56,7 @@ $(function(){
 	// this element isn't given a name or id, which is an accessibility 
 	// issue, so I am going to add one myself to fix that issue
 	// the input the plugin adds has a class of "sp-input"
-	// $("input.sp-input").attr("id", "color-input"); // TO DO: uncomment once the color picker is added to the page
+	$("input.sp-input").attr("id", "color-input");
 
 	// ---------------------------------------------------------
 	// Accordion Widget
@@ -96,7 +96,10 @@ $(function(){
 				- the activeHeader icon should use the "ui-icon-caret-1-s"
 				- the header icon should use the "ui-icon-caret-1-e"
 	*/
-	// TO DO: add the accordion to the page with the settings/features listed above
+	$("#accordion").accordion({
+		collapsible: true,
+		
+	});
 
 	// ---------------------------------------------------------
 	// Color Effects in jQuery UI
