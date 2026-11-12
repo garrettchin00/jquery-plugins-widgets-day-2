@@ -128,7 +128,36 @@ $(function(){
 				- mouse enter: #d71db4
 				- mouse leave: #36d0b8
 	*/
-	// TO DO: Add the color animation to the SVG when a user hovers over it as described above
+	$("#animations svg").on({
+		mouseenter: () => {
+			jQuery.Color.hook("fill");
+
+			$("#path1").animate({
+				fill: "#87d036"
+			}, "slow");
+
+			$("#path2").animate({
+				fill: "#ea842f"
+			}, "slow");
+
+			$("#path3").animate({
+				fill: "#d71db4"
+			}, "slow");
+		},
+		mouseleave: () => {
+			$("#path1").animate({
+				fill: "#ef131f"
+			}, "slow");
+			
+			$("#path2").animate({
+				fill: "#5136d0"
+			}, "slow");
+
+			$("#path3").animate({
+				fill: "#36d0b8"
+			}, "slow");
+		}
+	});
 
 	// ---------------------------------------------------------
 	// Animation Between Classes in jQuery UI
