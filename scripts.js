@@ -1,11 +1,5 @@
 "use strict";
 
-// ---------------------------------------------------------
-// TO DO: Start in the HTML file head, we need to link to the 
-// resources we need to get the jQuery and Spectrum Color 
-// picker plugin working
-// ---------------------------------------------------------
-
 
 // ---------------------------------------------------------
 // JQUERY UI
@@ -44,7 +38,18 @@ $(function(){
 			- Move Event: http://bgrins.github.io/spectrum/#events-move
 				- on the move event, update the value of our "--svg" CSS variable on the root element to the selected color
 	*/
-	// TO DO: add the color picker with the settings/features listed above
+	$("#flat").spectrum({
+		preferredFormat: "hex3",
+		flat: true,
+		showInput: true,
+		color: "#f63077",
+		showButtons: false,
+		move: (color) => {
+			let root = document.documentElement;
+			let newColor = color.toHexString();
+			root.style.setProperty("--svg", newColor);
+		}
+	});
 
 	// when the color picker is created, the input is added to allow 
 	// the user to type a color in that they want to see
