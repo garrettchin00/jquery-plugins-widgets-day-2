@@ -172,7 +172,10 @@ $(function(){
 				- switch from the style1 class to the style2 class over 4000ms
 				- switch back over the same time frame
 	*/
-	// TO DO: add an animation from one class to another and back again on button click as described above
+	$("#switchClass button").on("click", () => {
+		$("#switchClass p").switchClass("style1", "style2", 4000);
+		$("#switchClass p").switchClass("style2", "style1", 4000)
+	});
 
 	// ---------------------------------------------------------
 	// Tabs Widget
